@@ -1,0 +1,6 @@
+Flask==1.0.2
+watchdog==0.8.3 # File system events monitor for efficient reloading of dev server
+python-dotenv==0.8.2 # Automatically load env vars from .env and .flaskenv when invoking flask or run()
+simplejson==3.14.0 # Preferred by Flask
+blinker==1.4 # Support for application signals
+ipython==6.3.1
