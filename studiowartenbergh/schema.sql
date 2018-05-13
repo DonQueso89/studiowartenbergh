@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS "image";
+DROP TABLE IF EXISTS "user";
+DROP TABLE IF EXISTS "content";
+
+CREATE table user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT UNIQUE NOT NULL,
+    email TEXT,
+)
+
+CREATE table image (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT UNIQUE NOT NULL,
+    url TEXT NOT NULL,
+)
+
+CREATE table content (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    body TEXT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+)
+
+CREATE TABLE content_images (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_id INTEGER FOREIGN KEY (image_id) REFERENCES image(id),
+    content_id INTEGER FOREIGN KEY (content_id) REFERENCES content(id),
+)

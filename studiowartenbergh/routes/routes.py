@@ -1,10 +1,14 @@
 def index():
     return """
+        <html>
+        <body background="/static/doge.jpg">
         <h1>Hello World</h1>
         <ul>
         <li><a href="/aboutme">About me</a></li>
         <li><a href="/aboutmystuff">About my stuff</a></li>
         </ul>
+        </body>
+        </html>
     """
 
 
