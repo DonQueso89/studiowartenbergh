@@ -1,0 +1,80 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Studio Wartenbergh</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <ul>
+      {% if g.user %}
+        <li>
+            <span>Logged in as {{ g.user['username'] }}</span>
+        </li>
+        <li>
+            <a href="{{ url_for('auth.logout') }}">
+                Log Out
+            </a>
+        </li>
+      {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}
+        <h2> Content submission / modification </h2>
+    {% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+        <div class="flash">
+            {{ message }}
+        </div>
+  {% endfor %}
+  {% block content %}
+  {% if content_list %}
+    <form method="post" action={{ url_for("admin.index") }} id="content_form">
+        <select id="content_select" name="content_select" form="content_form">
+            {% for content_item in content_list %}
+            <option value={{ content_item['id'] }} {% if content_item['id'] == selected_content['id']  %}selected{% endif %}>
+                        {{ content_item['title'] }}
+                    </option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+  {% else %}
+    No content found
+  {% endif %}
+  {% if selected_content['id'] %}
+    <p>
+        Now editing <span style='color:blue'>{{ selected_content['title'] }}</span><br>
+        <a href={{ url_for('admin.index') }}>
+            Reset<br>
+        </a>
+    </p>
+  {% endif %}
+  <form method="post" action={{ url_for("admin.submit_content")}} id="content_form" enctype=multipart/form-data>
+    <input type="hidden" name="content_id" id="content_id" value={{ selected_content['id'] }}>
+    <label for="title">Title</label>
+    <input type="title" name="title" id="title" value={{ selected_content['title'] }}>
+    <label for="body">Text</label>
+    <textarea name="body" id="body">{{ selected_content['body'] }}</textarea>
+    {% if selected_content['images']  %}
+        {% for image in selected_content['images'] %}
+            <img class="thumbnail" src={{ url_for('static', filename=image['filename']) }}>
+            <a class='button' href={{ url_for('admin.delete_image', image_id=image['id'], content_id=selected_content['id']) }}>
+                Delete {{ image['filename'] }}
+            </a>
+        {% endfor %}
+    {% endif %}
+    <label for="image">Add image</label>
+    <input type="file" class="image_input" name="image" accept="image/*" multiple>
+    <input type="submit" value="Save changes" style="color:green">
+  </form>
+  {% if selected_content['id'] %}
+  <form action={{ url_for("admin.delete_content") }} method="post">
+      {% for image in selected_content['images'] %}
+        <input type="hidden" name="image" id="image" value={{ image['id'] }}>
+     {% endfor %}
+     <input type="hidden" name="content_id" id="content_id" value={{ selected_content['id'] }}>
+     <input type="submit" value="Delete {{ selected_content['title']}}" style="color:red">
+  </form>
+  {% endif %}
+  {% endblock %}
+</section>
