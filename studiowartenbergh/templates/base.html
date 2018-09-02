@@ -1,21 +1,26 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - Studio Wartenbergh</title>
+<!doctype HTML>
+<html>
+<title>{% block title %}{% endblock %} Studio Wartenbergh</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</body>
 <img class='site-header-image' src={{ url_for('static', filename='header.png')}}>
-<nav>
-    {% if g.user %}
-    <h3>Authentication</h3>
-    <ul>
-        <li><span>Logged in as {{ g.user['username'] }}</span>
-        <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    </ul>
-    {% endif %}
-    <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/about'>About me</a></li>
-        <li><a href='/contact'>Contact</a></li>
-    </ul>
-</nav>
+<div class='site-header-container'>
+    <nav>
+        {% if g.user %}
+        <h3>Authentication</h3>
+        <ul>
+            <li><span>Logged in as {{ g.user['username'] }}</span>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+        </ul>
+        {% endif %}
+        <ul class='header-menu'>
+            <li class='header-menu-item'><a href='/'>Home</a></li>
+            <li class='header-menu-item'><a href='/about'>About me</a></li>
+            <li class='header-menu-item'><a href='/contact'>Contact</a></li>
+        </ul>
+    </nav>
+    <p>studio Wartenbergh</p>
+</div>
 <section class="content">
   <header>
     {% block header %}{% endblock %}
@@ -25,3 +30,5 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+</body>
+</html>
