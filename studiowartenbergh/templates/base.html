@@ -1,19 +1,19 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - Studio Wartenbergh</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<img class='site-header-image' src={{ url_for('static', filename='header.png')}}>
 <nav>
     {% if g.user %}
     <h3>Authentication</h3>
     <ul>
-        <li><span>{{ g.user['username'] }}</span>
+        <li><span>Logged in as {{ g.user['username'] }}</span>
         <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
     </ul>
     {% endif %}
     <ul>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/portfolio'>Portfolio</a></li>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/about'>About me</a></li>
         <li><a href='/contact'>Contact</a></li>
-        <li><a href='/webshop'>Webshop</a></li>
     </ul>
 </nav>
 <section class="content">
