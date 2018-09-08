@@ -4,3 +4,4 @@ python-dotenv==0.8.2 # Automatically load env vars from .env and .flaskenv when 
 simplejson==3.14.0 # Preferred by Flask
 blinker==1.4 # Support for application signals
 ipython==6.3.1
+uwsgi
