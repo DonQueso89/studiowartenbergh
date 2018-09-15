@@ -1,5 +1,5 @@
 {
     "optimize": ["js", "css"],
-    "http://studiowartenbergh.com",
+    "site-url": "http://studiowartenbergh.com",
     "pretiffy": "true"
 }

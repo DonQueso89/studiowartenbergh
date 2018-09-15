@@ -206,6 +206,7 @@ input[type=submit] {
     padding: auto; /* Some padding */
     width: 600px; /* Set a small width */
 }
+
 .item-abstract-small {
     border-radius: 8px;  /* Rounded border */
     padding: auto; /* Some padding */
@@ -222,10 +223,18 @@ input[type=submit] {
     width: 600px; /* Set a small width */
 }
 /* Add a hover effect (blue shadow) */
-.thumbnail:hover {
+ .thumbnail:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
-
+.item-abstract-small:hover {
+    box-shadow: 0 0 4px 4px rgba(0, 140, 186, 0.5);
+}
+.item-abstract-medium:hover {
+    box-shadow: 0 0 4px 4px rgba(0, 140, 186, 0.5);
+}
+.item-abstract-large:hover {
+    box-shadow: 0 0 4px 4px rgba(0, 140, 186, 0.5);
+}
 /* Div managing all the item-containers on the homepage */
 
 .items-playground {
