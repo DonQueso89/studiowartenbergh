@@ -5,3 +5,4 @@ simplejson==3.14.0 # Preferred by Flask
 blinker==1.4 # Support for application signals
 ipython==6.3.1
 uwsgi
+cactus==3.3.3  # For static generation and deployment

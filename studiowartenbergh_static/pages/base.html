@@ -1,0 +1,24 @@
+<!doctype HTML>
+<html>
+<title>{% block title %}{% endblock %} Studio Wartenbergh</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</body>
+<img class='site-header-image' src="{% static 'images/header.png' %}">
+<div class='site-header-container'>
+    <nav>
+        <ul class='header-menu'>
+            <li class='header-menu-item'><a href="{% url '/' %}">Home</a></li>
+            <li class='header-menu-item'><a href="{% url '/about.html' %}">About me</a></li>
+            <li class='header-menu-item'><a href="{% url '/contact.html' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <p>studio Wartenbergh</p>
+</div>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>
+</body>
+</html>

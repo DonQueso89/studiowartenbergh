@@ -1,0 +1,268 @@
+html {
+  font-family: monospace;
+  background: #fff;
+  padding: 1rem;
+}
+
+body {
+  font-family: monospace;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 18px;
+}
+
+.site-header-image {
+  height: auto;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.site-header-container {
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
+}
+
+.site-header-container > * {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.site-header-container > p {
+  margin-left: 66%;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: monospace;
+  color: #377ba8;
+  margin: 1rem 0;
+}
+
+a {
+  color: black;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid lightgray;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+nav h1 {
+  flex: auto;
+  margin: 0;
+}
+
+nav h1 a {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+nav ul  {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+nav ul li a, nav ul li span, header .action {
+  display: block;
+  padding: 0.5rem;
+}
+
+.content {
+  padding: 0 1rem 1rem;
+}
+
+.content > header {
+  display: flex;
+  align-items: flex-end;
+}
+
+.content > header h1 {
+  flex: auto;
+  margin: 1rem 0 0.25rem 0;
+}
+
+.flash {
+  margin: 1em 0;
+  padding: 1em;
+  background: #cae6f6;
+  border: 1px solid #377ba8;
+}
+
+.post > header {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.85em;
+}
+
+.post > header > div:first-of-type {
+  flex: auto;
+}
+
+.post > header h1 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.post .about {
+  color: black;
+  font-style: italic;
+}
+
+.post .body {
+  white-space: pre-line;
+}
+
+.content:last-child {
+  margin-bottom: 0;
+}
+
+.content form {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.content p .content input, .content textarea {
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+}
+
+.content textarea {
+  min-height: 12em;
+  resize: vertical;
+}
+
+input.danger {
+  color: #cc2f2e;
+}
+
+input[type=submit] {
+  align-self: start;
+  min-width: 10em;
+}
+.button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.thumbnail {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+}
+
+.image {
+    border-radius: 8px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 300px; /* Set a small width */
+}
+
+.item-abstract-small {
+    border: 5px solid red;
+    padding: 50px;
+}
+
+
+/* Specificity overrides for abstract containers */
+.item-abstract-small > img {
+    left: 20;
+    border-radius: 3px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 300px; /* Set a small width */
+}
+.item-abstract-medium > img {
+    border-radius: 6px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 500px; /* Set a small width */
+}
+.item-abstract-large > img {
+    border-radius: 8px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 600px; /* Set a small width */
+}
+.item-abstract-small {
+    border-radius: 8px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 300px; /* Set a small width */
+}
+.item-abstract-medium {
+    border-radius: 8px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 500px; /* Set a small width */
+}
+.item-abstract-large {
+    border-radius: 8px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 600px; /* Set a small width */
+}
+/* Add a hover effect (blue shadow) */
+.thumbnail:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+/* Div managing all the item-containers on the homepage */
+
+.items-playground {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-auto-rows: 550px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+
+.item-container {
+    white-space: pre-wrap;
+}
+
+
+.full-item {
+    display: none; /* hide full items on page load */
+    margin: 25%;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    padding: 25%;
+}
+
+/*----------- Modal box -----------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* fallback */
+    background-color: rgb(0,0,0, 0.4);
+}
