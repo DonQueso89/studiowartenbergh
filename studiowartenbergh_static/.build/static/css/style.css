@@ -177,10 +177,18 @@ input[type=submit] {
     width: 150px; /* Set a small width */
 }
 
-.image {
-    border-radius: 8px;  /* Rounded border */
+.modal > .full-images > .image {
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
-    width: 300px; /* Set a small width */
+    width: 30%; /* Set a small width */
+    height: 80%; /* Set same height as container*/
+}
+
+.modal > .full-images > .image-large {
+    border-radius: 2px;  /* Rounded border */
+    padding: auto; /* Some padding */
+    width: 50%; /* Set a small width */
+    height: 80%; /* Set same height as container*/
 }
 
 .item-abstract-small {
@@ -190,30 +198,30 @@ input[type=submit] {
 
 
 /* Specificity overrides for abstract containers */
-.item-abstract-small > img {
+.item-container > .item-abstract-small > img {
     left: 20;
-    border-radius: 3px;  /* Rounded border */
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
     width: 300px; /* Set a small width */
 }
-.item-abstract-medium > img {
-    border-radius: 6px;  /* Rounded border */
+.item-container > .item-abstract-medium > img {
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
     width: 500px; /* Set a small width */
 }
-.item-abstract-large > img {
-    border-radius: 8px;  /* Rounded border */
+.item-container > .item-abstract-large > img {
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
     width: 600px; /* Set a small width */
 }
 
 .item-abstract-small {
-    border-radius: 8px;  /* Rounded border */
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
     width: 300px; /* Set a small width */
 }
 .item-abstract-medium {
-    border-radius: 8px;  /* Rounded border */
+    border-radius: 2px;  /* Rounded border */
     padding: auto; /* Some padding */
     width: 500px; /* Set a small width */
 }
@@ -253,11 +261,15 @@ input[type=submit] {
 
 .full-item {
     display: none; /* hide full items on page load */
-    margin: 25%;
-    width: auto;
-    height: auto;
-    background-color: #fff;
-    padding: 25%;
+}
+
+.full-item-visible {
+    display: inline;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
 }
 
 /*----------- Modal box -----------*/
@@ -274,4 +286,41 @@ input[type=submit] {
     overflow: auto;
     background-color: rgb(0,0,0); /* fallback */
     background-color: rgb(0,0,0, 0.4);
+}
+
+.close-modal-btn {
+    position: sticky;
+    z-index: 99999;
+    top: 0;
+    font-size: 40px;
+}
+
+.close-modal-btn:hover {
+    color: lightblue;
+}
+
+.full-images {
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 0 4px;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    vertical-align: middle;
+}
+
+
+.full-overlay-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 0%;
+  height: 80%;
+  width: 80%;
+  opacity: 0;
+  transition: 2s ease;
+  background-color: #cae6f6;
+}
+
+.full-item-visible:hover .full-overlay-text {
+  opacity: .8;
 }
