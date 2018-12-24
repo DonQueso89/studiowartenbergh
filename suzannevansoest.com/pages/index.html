@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    <div class="flex-container">
+    <!-- Responsive image grid of two columns -->
+    <div class="column">
+    {% for painting in paintings_first_col %}
+        <div class="painting">
+            <img src={{ painting.main_image }}></img>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="column">
+    {% for painting in paintings_second_col %}
+        <div class="painting">
+            <img src={{ painting.main_image }}></img>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
