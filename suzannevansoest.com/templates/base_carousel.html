@@ -13,23 +13,14 @@
     </head>
 
     <body>
-      <div class="container" id="site-menu">
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="{% if_current_page '/index.html' 'active' '' %}"><a href="{% url '/index.html' %}">Work</a></li>
-            <li class="{% if_current_page '/bio.html' 'active' '' %}"><a href="{% url '/bio.html' %}">Bio</a></li>
-            <li class="{% if_current_page '/contact.html' 'active' '' %}"><a href="{% url '/contact.html' %}">Contact</a></li>
-          </ul>
-        </div><!--/.navbar-collapse -->
-      </div>
-
     {% block body %}
     {% endblock %}
 
     <script src="{% static '/static/js/vendor/jquery-1.10.1.js' %}"></script>
     <script src="{% static '/static/js/vendor/bootstrap.js' %}"></script>
     <script src="{% static '/static/js/main.js' %}"></script>
-  </body>
+    <script src="{% static '/static/js/carouselManagement.js' %}"></script>
+    </body>
 
   {% block scripts %}
   {% endblock %}

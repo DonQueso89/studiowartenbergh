@@ -7,14 +7,18 @@
     <div class="column">
     {% for painting in paintings_first_col %}
         <div class="painting">
-            <img src={{ painting.main_image }}></img>
+            <a href="{% url '/carousel.html' %}?active={{ painting.id }}">
+                <img src={{ painting.main_image }}></img>
+            </a>
         </div>
     {% endfor %}
     </div>
     <div class="column">
     {% for painting in paintings_second_col %}
         <div class="painting">
-            <img src={{ painting.main_image }}></img>
+            <a href="{% url '/carousel.html' %}?active={{ painting.id }}">
+                <img src={{ painting.main_image }}></img>
+            </a>
         </div>
     {% endfor %}
     </div>

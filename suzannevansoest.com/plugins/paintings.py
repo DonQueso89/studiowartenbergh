@@ -14,7 +14,6 @@ def preBuild(site):
     """
 
     PAINTINGS = []
-    id_seq = 0
 
     # Build all the paintings
     for page in site.pages():
@@ -24,7 +23,6 @@ def preBuild(site):
 
             # Build a context for each post
             paintingContext = {}
-            paintingContext['id'] = id_seq
             paintingContext['name'] = ctx['name']
             paintingContext['width'] = ctx['width']
             paintingContext['height'] = ctx['height']
@@ -34,8 +32,11 @@ def preBuild(site):
             paintingContext['short_description'] = ctx['short_description']
 
             PAINTINGS.append(paintingContext)
-            id_seq += 1
     PAINTINGS = sorted(PAINTINGS, key=lambda x: x['date_added'], reverse=True)
+
+    for idx, p in enumerate(PAINTINGS):
+        p['id'] = idx
+
     setattr(site, 'paintings', PAINTINGS)
 
 
@@ -51,5 +52,6 @@ def preBuildPage(site, page, context, data):
     paintings_second_col = [paintings[i] for i in range(len(paintings) // 2, len(paintings))]
     context['paintings_first_col'] = paintings_first_col
     context['paintings_second_col'] = paintings_second_col
+    context['paintings'] = paintings
 
     return context, data
