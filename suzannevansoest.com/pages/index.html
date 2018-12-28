@@ -7,7 +7,7 @@
     <div class="column">
     {% for painting in paintings_first_col %}
         <div class="painting">
-            <a href="{% url '/carousel.html' %}?active={{ painting.id }}">
+            <a href="{% config 'gh-pages-prefix' %}{% url '/carousel.html' %}?active={{ painting.id }}">
                 <img src={{ painting.main_image }}></img>
             </a>
         </div>
@@ -16,7 +16,7 @@
     <div class="column">
     {% for painting in paintings_second_col %}
         <div class="painting">
-            <a href="{% url '/carousel.html' %}?active={{ painting.id }}">
+            <a href="{% config 'gh-pages-prefix' %}{% url '/carousel.html' %}?active={{ painting.id }}">
                 <img src={{ painting.main_image }}></img>
             </a>
         </div>

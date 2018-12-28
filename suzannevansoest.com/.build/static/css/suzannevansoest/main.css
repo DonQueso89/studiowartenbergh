@@ -1,0 +1,86 @@
+.carousel-close-btn {
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #ffffff;
+    border: #000000;
+    z-index: 100;
+    position: absolute;
+    right: 0;
+}
+
+#site-menu {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    z-index: 1000;
+}
+
+.navbar-collapse a {
+    font-size: 40px;
+    text-transform: lowercase;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.navbar-collapse {
+    position: fixed;
+    z-index: 2;
+}
+
+.bio-image {
+    float: left;
+    width: 25%;
+    height: 25%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two equal columns that sits next to each other */
+.flex-container > .column {
+  font-size: 12px;
+  flex: 50%;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+.flex-container > .column > .painting > a > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%
+}
+
+.flex-container > .column > .painting > a > img:hover {
+    opacity: 0.85;
+}
+
+#painting-carousel > .carousel-inner > .item > img  {
+    max-height: 100%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

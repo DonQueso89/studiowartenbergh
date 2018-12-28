@@ -2,7 +2,7 @@
 
 {% block body %}
 <div id="painting-carousel" class="carousel" data-ride="carousel" data-interval="false">
-    <a href="{% url '/index.html' %}">
+    <a href="{% config 'gh-pages-prefix' %}{% url '/index.html' %}">
         <button type="button" class="carousel-close-btn" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

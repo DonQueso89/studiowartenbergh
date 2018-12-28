@@ -1,0 +1,6 @@
+{
+    "optimize": ["js", "css"],
+    "site-url": "http://suzannevansoest.com/",
+    "prettify": "true",
+    "gh-pages-prefix": "/suzannevansoest"
+}

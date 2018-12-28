@@ -1,3 +1,4 @@
+import os
 import yaml
 
 ORDER = 999
@@ -28,9 +29,8 @@ def preBuild(site):
             paintingContext['height'] = ctx['height']
             paintingContext['materials'] = ctx['materials']
             paintingContext['date_added'] = ctx['date_added']
-            paintingContext['main_image'] = site.get_url_for_static(ctx['main_image'])
+            paintingContext['main_image'] = site.config.get("gh-pages-prefix", "") + site.get_url_for_static(ctx['main_image'])
             paintingContext['short_description'] = ctx['short_description']
-
             PAINTINGS.append(paintingContext)
     PAINTINGS = sorted(PAINTINGS, key=lambda x: x['date_added'], reverse=True)
 
